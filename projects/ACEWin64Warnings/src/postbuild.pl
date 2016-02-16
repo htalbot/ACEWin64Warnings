@@ -1,0 +1,28 @@
+#!/usr/bin/perl -w
+
+use strict;
+use Cwd;
+
+unshift(@INC, $ENV{DPO_CORE_ROOT} . "/scripts");
+require DPOPostbuild;
+
+
+my $root_dir = $ENV{"ACEWIN64WARNINGS_PRJ_ROOT"};
+$root_dir =~ s/\\/\//g;
+
+# read version of the project
+my $major=0;
+my $minor=0;
+my $patch=0;
+if (!
+::read_project_version($root_dir,
+                                    \$major,
+                                    \$minor,
+                                    \$patch))
+{
+    print "Can not extract project version from $root_dir.\n";
+    exit -1;
+}
+
+print "(postbuild.pl) version = $major.$minor.$patch\n";
+

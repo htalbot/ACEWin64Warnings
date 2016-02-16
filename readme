@@ -1,0 +1,18 @@
+To avoid warnings generated when building an application that links with ACE in
+with VC 64. Simply surround ACE includes by BeginSuppressWarnings.h and
+EndSuppressWarnings.h.
+
+Ex.:
+
+    #include "ACEWin64Warnings/BeginSuppressWarnings.h" and
+    #include "ace/Log_Msg.h"
+    #include "ACEWin64Warnings/EndSuppressWarnings.h" and
+
+
+ACEWin64Warnings has been generated with DPO (https://github.com/htalbot/DPOpp)
+
+- Get it from https://github.com/htalbot/ACEWin64Warnings
+
+- ACEWin64Warnings consists of header files only. No need to build.
+
+- To push it into a pool, freeze it with dpo.pl (https://github.com/htalbot/DPOpp)

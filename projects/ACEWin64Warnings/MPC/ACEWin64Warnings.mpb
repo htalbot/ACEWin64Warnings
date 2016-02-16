@@ -1,0 +1,3 @@
+project: ACEWin64Warnings_dependencies {
+    includes += $(ACEWIN64WARNINGS_PRJ_ROOT)/include
+}
